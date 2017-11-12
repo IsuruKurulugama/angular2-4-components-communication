@@ -1,0 +1,15 @@
+<div style="text-align:center">
+  <h1>
+    Communicate Via Emitters & @Output (Child to parent)
+  </h1>
+</div>
+
+<div class="margin-body-text">
+  <div>
+    <h4>I am Parent</h4>
+    <h6> This message from my child: <i class="message-text-color">{{messageFromChild}}</i></h6>
+  </div><br>
+  <app-child-to-parent-via-output-emitter-child1 #child1 (child1MessageToParent)="receiveMessage($event)" (child1MessageToChild2)="child2.receiveMessage($event)"></app-child-to-parent-via-output-emitter-child1>
+  <app-child-to-parent-via-output-emitter-child2 #child2 (child2MessageToParent)="receiveMessage($event)" (child2MessageToChild1)="child1.receiveMessage($event)"></app-child-to-parent-via-output-emitter-child2>
+
+</div>
